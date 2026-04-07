@@ -2,7 +2,9 @@
 
 In a sequential pattern, agents work one after another in a defined pipeline, where each agent's output feeds into the next. This approach works well for tasks that follow a natural progression, like content creation workflows, staged data transformations, or step-by-step analysis.
 
-![Architecture - Sequential Pattern](../../docs/images/01-sequential-pattern-architecture.png)
+<div>
+  <img src="../../docs/images/01-sequential-pattern-architecture.png" alt="Architecture - Sequential Pattern" width="640" />
+</div>
 
 ## Instruction
 
