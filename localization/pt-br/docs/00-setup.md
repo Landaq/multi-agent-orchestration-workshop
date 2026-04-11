@@ -1,21 +1,21 @@
-# 00 Setup
+# 00 Configuração
 
-In this session, we'll set up a development environment either on your machine or in GitHub Codespaces.
+Nesta sessão, vamos configurar o ambiente de desenvolvimento na sua máquina ou no GitHub Codespaces.
 
-## Prerequisites
+## Pré-requisitos
 
-- Web browser: either [Microsoft Edge](https://microsoft.com/edge) or [Google Chrome](http://chrome.google.com)
-- [Azure Subscription](https://azure.microsoft.com/free)
+- Navegador web: [Microsoft Edge](https://microsoft.com/edge) ou [Google Chrome](http://chrome.google.com)
+- [Assinatura Azure](https://azure.microsoft.com/free)
 
-## Setup in GitHub Codespaces
+## Configuração no GitHub Codespaces
 
-For the workshop, we strongly recommend using GitHub Codespaces to save time setting up your development environment. If you prefer to set up the development environment on your local machine, skip this section and move to the [Setup in VS Code](#setup-in-vs-code) section.
+Para o workshop, recomendamos fortemente o uso do GitHub Codespaces para economizar tempo na configuração do ambiente de desenvolvimento. Se você preferir configurar o ambiente na sua máquina local, pule esta seção e vá para a seção [Configuração no VS Code](#configuração-no-vs-code).
 
-1. Click the button below to create a new GitHub Codespaces instance.
+1. Clique no botão abaixo para criar uma nova instância do GitHub Codespaces.
 
-   [![Create a new GitHub Codespaces instance](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/multi-agent-orchestration-workshop)
+   [![Criar uma nova instância do GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/multi-agent-orchestration-workshop)
 
-1. Once created, run the following commands to verify that the necessary tools are properly installed.
+1. Após a criação, execute os seguintes comandos para verificar se as ferramentas necessárias estão instaladas corretamente.
 
     ```bash
     # .NET SDK
@@ -45,35 +45,35 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     aspire --version
     ```
 
-1. Check your GitHub login status.
+1. Verifique o status do seu login no GitHub.
 
     ```bash
     gh auth status
     ```
 
-1. Get the remote repository details.
+1. Obtenha os detalhes do repositório remoto.
 
     ```bash
     git remote -v
     ```
 
-   You should see the following.
+   Você deverá ver o seguinte.
 
     ```text
     origin  https://github.com/Azure-Samples/multi-agent-orchestration-workshop.git (fetch)
     origin  https://github.com/Azure-Samples/multi-agent-orchestration-workshop.git (push)
     ```
 
-   If you don't see those two lines, delete the current GitHub Codespaces instance and create it again.
+   Se você não vir essas duas linhas, exclua a instância atual do GitHub Codespaces e crie-a novamente.
 
-1. Since the GitHub Codespaces instance is NOT under your account, fork the repository to transfer ownership using the following commands.
+1. Como a instância do GitHub Codespaces NÃO está sob a sua conta, faça um fork do repositório para transferir a propriedade usando os seguintes comandos.
 
     ```bash
     git remote -v > remote.txt
     git add . && git commit -m "Add remote.txt for forking"
     ```
 
-   You might see a message like the one below:
+   Você pode ver uma mensagem como a seguinte:
 
     ```text
     You don't have write access to the Azure-Samples/multi-agent-orchestration-workshop repository, so you cannot push changes to it.
@@ -82,15 +82,15 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     Would you like to proceed?
     ```
 
-   Enter `y` to continue. It automatically forks the repository under your account.
+   Digite `y` para continuar. Isso fará automaticamente o fork do repositório na sua conta.
 
-1. Check the remote repository status.
+1. Verifique o status do repositório remoto.
 
     ```bash
     git remote -v
     ```
 
-   This time, you should see the following four lines.
+   Desta vez, você deverá ver as seguintes quatro linhas.
 
     ```text
     origin  https://github.com/{{YOUR_GITHUB_ID}}/multi-agent-orchestration-workshop.git (fetch)
@@ -99,22 +99,22 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     upstream        https://github.com/Azure-Samples/multi-agent-orchestration-workshop (push)
     ```
 
-   If you don't see those four lines, delete and recreate the GitHub Codespaces instance.
+   Se você não vir essas quatro linhas, exclua e recrie a instância do GitHub Codespaces.
 
-## Setup in VS Code
+## Configuração no VS Code
 
-If you already have a GitHub Codespaces instance, skip this section and go directly to the [Log in to Azure](#log-in-to-azure) section.
+Se você já tem uma instância do GitHub Codespaces, pule esta seção e vá diretamente para a seção [Fazer login no Azure](#fazer-login-no-azure).
 
-1. Install the following tools on your machine.
+1. Instale as seguintes ferramentas na sua máquina.
 
    - [VS Code](https://code.visualstudio.com/download) + [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
-   - [Docker Desktop](https://docs.docker.com/desktop/) or equivalent
+   - [Docker Desktop](https://docs.docker.com/desktop/) ou equivalente
    - [GitHub CLI](https://cli.github.com)
    - [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
    - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
    - [Aspire CLI](https://aspire.dev/get-started/install-cli/)
 
-   Then, run the following commands to verify they are properly installed.
+   Em seguida, execute os seguintes comandos para verificar se estão instalados corretamente.
 
     ```bash
     # .NET SDK
@@ -137,41 +137,41 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     aspire --version
     ```
 
-### Log in to GitHub
+### Fazer login no GitHub
 
-1. Log in to GitHub.
+1. Faça login no GitHub.
 
     ```bash
     gh auth login
     ```
 
-   Once logged in, run the following command to verify the login status.
+   Após fazer login, execute o seguinte comando para verificar o status do login.
 
     ```bash
     gh auth status
     ```
 
-### Clone project
+### Clonar o projeto
 
-1. Fork this repository to your local machine.
+1. Faça fork deste repositório para a sua máquina local.
 
     ```bash
     gh repo fork Azure-Samples/multi-agent-orchestration-workshop --clone
     ```
 
-1. Navigate to the cloned directory.
+1. Navegue até o diretório clonado.
 
     ```bash
     cd multi-agent-orchestration-workshop
     ```
 
-1. Check the remote repository status.
+1. Verifique o status do repositório remoto.
 
     ```bash
     git remote -v
     ```
 
-   You should see the following four lines.
+   Você deverá ver as seguintes quatro linhas.
 
     ```text
     origin  https://github.com/{{YOUR_GITHUB_ID}}/multi-agent-orchestration-workshop.git (fetch)
@@ -180,15 +180,15 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     upstream        https://github.com/Azure-Samples/multi-agent-orchestration-workshop (push)
     ```
 
-1. Open the repository in VS Code.
+1. Abra o repositório no VS Code.
 
     ```bash
     code .
     ```
 
-## Log in to Azure
+## Fazer login no Azure
 
-1. Log in to Azure.
+1. Faça login no Azure.
 
     ```bash
     # Azure Developer CLI
@@ -198,10 +198,10 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     az login
     ```
 
-   Once logged in, run the following command to verify the login status.
+   Após fazer login, execute o seguinte comando para verificar o status do login.
 
     ```bash
-    # Azure Develper CLI
+    # Azure Developer CLI
     azd auth login --check-status
 
     # Azure Login
@@ -210,6 +210,6 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
 
 ---
 
-Congratulations! 🎉 You've just completed the development environment setup. Let's move on!
+Parabéns! 🎉 Você acabou de concluir a configuração do ambiente de desenvolvimento. Vamos prosseguir!
 
 👈 [README](../README.md) | [01: Sequential Pattern](./01-sequential-pattern.md) 👉

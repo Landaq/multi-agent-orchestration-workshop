@@ -1,21 +1,21 @@
-# 00 Setup
+# 00 环境搭建
 
-In this session, we'll set up a development environment either on your machine or in GitHub Codespaces.
+在本课程中，我们将在您的本地机器或 GitHub Codespaces 中搭建开发环境。
 
-## Prerequisites
+## 前提条件
 
-- Web browser: either [Microsoft Edge](https://microsoft.com/edge) or [Google Chrome](http://chrome.google.com)
-- [Azure Subscription](https://azure.microsoft.com/free)
+- Web 浏览器：[Microsoft Edge](https://microsoft.com/edge) 或 [Google Chrome](http://chrome.google.com)
+- [Azure 订阅](https://azure.microsoft.com/free)
 
-## Setup in GitHub Codespaces
+## 在 GitHub Codespaces 中搭建
 
-For the workshop, we strongly recommend using GitHub Codespaces to save time setting up your development environment. If you prefer to set up the development environment on your local machine, skip this section and move to the [Setup in VS Code](#setup-in-vs-code) section.
+对于本工作坊，我们强烈建议使用 GitHub Codespaces 以节省搭建开发环境的时间。如果您更倾向于在本地机器上搭建开发环境，请跳过本节，直接前往[在 VS Code 中搭建](#在-vs-code-中搭建)部分。
 
-1. Click the button below to create a new GitHub Codespaces instance.
+1. 点击下方按钮创建一个新的 GitHub Codespaces 实例。
 
-   [![Create a new GitHub Codespaces instance](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/multi-agent-orchestration-workshop)
+   [![创建新的 GitHub Codespaces 实例](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/multi-agent-orchestration-workshop)
 
-1. Once created, run the following commands to verify that the necessary tools are properly installed.
+1. 创建完成后，运行以下命令验证必要工具是否已正确安装。
 
     ```bash
     # .NET SDK
@@ -45,35 +45,35 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     aspire --version
     ```
 
-1. Check your GitHub login status.
+1. 检查您的 GitHub 登录状态。
 
     ```bash
     gh auth status
     ```
 
-1. Get the remote repository details.
+1. 获取远程仓库详情。
 
     ```bash
     git remote -v
     ```
 
-   You should see the following.
+   您应该看到以下内容。
 
     ```text
     origin  https://github.com/Azure-Samples/multi-agent-orchestration-workshop.git (fetch)
     origin  https://github.com/Azure-Samples/multi-agent-orchestration-workshop.git (push)
     ```
 
-   If you don't see those two lines, delete the current GitHub Codespaces instance and create it again.
+   如果没有看到这两行，请删除当前的 GitHub Codespaces 实例并重新创建。
 
-1. Since the GitHub Codespaces instance is NOT under your account, fork the repository to transfer ownership using the following commands.
+1. 由于 GitHub Codespaces 实例不在您的账户下，请使用以下命令 fork 仓库以转移所有权。
 
     ```bash
     git remote -v > remote.txt
     git add . && git commit -m "Add remote.txt for forking"
     ```
 
-   You might see a message like the one below:
+   您可能会看到类似以下的提示信息：
 
     ```text
     You don't have write access to the Azure-Samples/multi-agent-orchestration-workshop repository, so you cannot push changes to it.
@@ -82,15 +82,15 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     Would you like to proceed?
     ```
 
-   Enter `y` to continue. It automatically forks the repository under your account.
+   输入 `y` 继续。它将自动在您的账户下 fork 该仓库。
 
-1. Check the remote repository status.
+1. 检查远程仓库状态。
 
     ```bash
     git remote -v
     ```
 
-   This time, you should see the following four lines.
+   这次，您应该看到以下四行。
 
     ```text
     origin  https://github.com/{{YOUR_GITHUB_ID}}/multi-agent-orchestration-workshop.git (fetch)
@@ -99,22 +99,22 @@ For the workshop, we strongly recommend using GitHub Codespaces to save time set
     upstream        https://github.com/Azure-Samples/multi-agent-orchestration-workshop (push)
     ```
 
-   If you don't see those four lines, delete and recreate the GitHub Codespaces instance.
+   如果没有看到这四行，请删除并重新创建 GitHub Codespaces 实例。
 
-## Setup in VS Code
+## 在 VS Code 中搭建
 
-If you already have a GitHub Codespaces instance, skip this section and go directly to the [Log in to Azure](#log-in-to-azure) section.
+如果您已经创建了 GitHub Codespaces 实例，请跳过本节，直接前往[登录 Azure](#登录-azure)部分。
 
-1. Install the following tools on your machine.
+1. 在您的机器上安装以下工具。
 
    - [VS Code](https://code.visualstudio.com/download) + [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
-   - [Docker Desktop](https://docs.docker.com/desktop/) or equivalent
+   - [Docker Desktop](https://docs.docker.com/desktop/) 或等效工具
    - [GitHub CLI](https://cli.github.com)
    - [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/install-azd)
    - [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
    - [Aspire CLI](https://aspire.dev/get-started/install-cli/)
 
-   Then, run the following commands to verify they are properly installed.
+   然后，运行以下命令验证它们是否已正确安装。
 
     ```bash
     # .NET SDK
@@ -137,41 +137,41 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     aspire --version
     ```
 
-### Log in to GitHub
+### 登录 GitHub
 
-1. Log in to GitHub.
+1. 登录 GitHub。
 
     ```bash
     gh auth login
     ```
 
-   Once logged in, run the following command to verify the login status.
+   登录成功后，运行以下命令验证登录状态。
 
     ```bash
     gh auth status
     ```
 
-### Clone project
+### 克隆项目
 
-1. Fork this repository to your local machine.
+1. 将此仓库 fork 到您的本地机器。
 
     ```bash
     gh repo fork Azure-Samples/multi-agent-orchestration-workshop --clone
     ```
 
-1. Navigate to the cloned directory.
+1. 导航到克隆的目录。
 
     ```bash
     cd multi-agent-orchestration-workshop
     ```
 
-1. Check the remote repository status.
+1. 检查远程仓库状态。
 
     ```bash
     git remote -v
     ```
 
-   You should see the following four lines.
+   您应该看到以下四行。
 
     ```text
     origin  https://github.com/{{YOUR_GITHUB_ID}}/multi-agent-orchestration-workshop.git (fetch)
@@ -180,15 +180,15 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     upstream        https://github.com/Azure-Samples/multi-agent-orchestration-workshop (push)
     ```
 
-1. Open the repository in VS Code.
+1. 在 VS Code 中打开仓库。
 
     ```bash
     code .
     ```
 
-## Log in to Azure
+## 登录 Azure
 
-1. Log in to Azure.
+1. 登录 Azure。
 
     ```bash
     # Azure Developer CLI
@@ -198,18 +198,18 @@ If you already have a GitHub Codespaces instance, skip this section and go direc
     az login
     ```
 
-   Once logged in, run the following command to verify the login status.
+   登录成功后，运行以下命令验证登录状态。
 
     ```bash
-    # Azure Develper CLI
+    # Azure Developer CLI
     azd auth login --check-status
 
-    # Azure Login
+    # Azure CLI
     az account show
     ```
 
 ---
 
-Congratulations! 🎉 You've just completed the development environment setup. Let's move on!
+恭喜！🎉 您已完成开发环境搭建。让我们继续吧！
 
-👈 [README](../README.md) | [01: Sequential Pattern](./01-sequential-pattern.md) 👉
+👈 [README](../README.md) | [01: 顺序模式](./01-sequential-pattern.md) 👉
