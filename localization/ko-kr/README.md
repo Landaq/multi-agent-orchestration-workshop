@@ -63,3 +63,8 @@
 - [Microsoft Foundry Agent Service](https://aka.ms/microsoft-foundry/agent-service)
 - [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
 - [Aspire](https://aspire.dev)
+
+## 활용 사례
+
+- [인터뷰 코칭 앱](https://github.com/Azure-Samples/interview-coach-agent-framework)
+- [dotnet 기반 starter Pack](https://github.com/Azure/microsoft-agent-framework-foundry-starter-pack-net)
